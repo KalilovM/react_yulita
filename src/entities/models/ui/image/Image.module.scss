@@ -1,0 +1,15 @@
+.imageContainer {
+  @apply h-[300px] relative bg-primary-blue rounded-lg shadow-lg p-4 flex flex-col justify-center items-center;
+
+  label {
+    @apply font-bold text-[#B1CFFF] text-lg;
+  }
+
+  img {
+    @apply w-16 h-16;
+  }
+
+  .fullfillImage {
+    @apply w-full h-full absolute top-0 left-0 object-cover rounded-lg;
+  }
+}

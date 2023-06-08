@@ -1,0 +1,11 @@
+.sidebar {
+  @apply bg-primary-white w-[10rem] h-screen fixed flex flex-col shadow-lg;
+
+  .title {
+    @apply text-center m-0 p-4;
+
+    h1 {
+      @apply text-3xl font-medium;
+    }
+  }
+}

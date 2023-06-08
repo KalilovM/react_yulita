@@ -1,0 +1,27 @@
+.imagesBlock {
+  @apply bg-primary-white rounded-lg shadow-lg p-4;
+
+  h3 {
+    @apply font-medium mb-5;
+  }
+}
+
+.imagesList {
+  @apply grid grid-cols-3 gap-4 overflow-y-scroll h-[615px];
+}
+
+.imageUploadBlock {
+  @apply h-[300px] relative bg-primary-background rounded-lg shadow-lg p-4 flex flex-col justify-center items-center;
+
+  label {
+    @apply font-bold text-[#7B94BC] text-lg;
+  }
+
+  img {
+    @apply w-16 h-16;
+  }
+}
+
+.imageUploadInput {
+  @apply h-full w-full absolute top-0 left-0 opacity-0 cursor-pointer;
+}

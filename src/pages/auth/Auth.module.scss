@@ -1,0 +1,11 @@
+.container {
+  @apply flex justify-center items-center h-screen;
+
+  h1 {
+    @apply text-3xl m-0 font-normal text-center;
+  }
+}
+
+.form {
+  @apply flex justify-center gap-12 flex-col bg-primary-white p-12 rounded-lg shadow-lg;
+}

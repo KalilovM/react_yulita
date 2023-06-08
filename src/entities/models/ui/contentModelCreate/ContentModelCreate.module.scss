@@ -1,0 +1,19 @@
+.container {
+  @apply ml-[10rem] px-8 flex flex-col;
+}
+
+.form {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.contentLeft {
+  @apply flex flex-col gap-4;
+}
+
+.contentLeftGrid {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.contentRight {
+  @apply flex flex-col gap-4;
+}

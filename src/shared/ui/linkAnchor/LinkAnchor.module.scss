@@ -1,0 +1,8 @@
+.buttonLink {
+  @apply no-underline text-lg text-primary-white bg-primary-blue rounded-lg font-semibold shadow-lg p-3;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

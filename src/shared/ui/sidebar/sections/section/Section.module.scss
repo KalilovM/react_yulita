@@ -1,0 +1,21 @@
+.section {
+  @apply flex flex-col items-center basis-[100px] no-underline text-section-title-text transition-all ease-in-out;
+  .sectionIcon {
+    @apply rounded-md bg-primary-white shadow-lg p-4;
+
+    img {
+      @apply h-8 mx-auto;
+    }
+  }
+
+  h4 {
+    margin: 5px;
+    padding: 0;
+    text-align: center;
+    font-weight: 400;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
