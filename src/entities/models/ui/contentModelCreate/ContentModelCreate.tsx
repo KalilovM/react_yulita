@@ -21,17 +21,13 @@ export default function ContentModelCreate() {
           const formData = new FormData();
           formData.append('image', image);
           formData.append('cloth', clothId);
-          api.post('/clothes/create/model_image/', formData).then((res) => {
-            console.log(res);
-          });
+          api.post('/clothes/create/model_image/', formData);
         }
         for (const image of sample_images) {
           const formData = new FormData();
           formData.append('image', image);
           formData.append('cloth', clothId);
-          api.post('/clothes/create/sample_image/', formData).then((res) => {
-            console.log(res);
-          });
+          api.post('/clothes/create/sample_image/', formData);
         }
       });
       navigate('/');

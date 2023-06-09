@@ -20,7 +20,6 @@ export const Select = (props: IProps) => {
   React.useEffect(() => {
     api.get(url).then((res) => {
       setContent(res.data);
-      console.log(res.data);
     });
   }, []);
   return (

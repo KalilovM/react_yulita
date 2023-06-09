@@ -19,9 +19,25 @@ export default function ContentModelEdit() {
   const [sampleImages, setSampleImages] = React.useState<Array<IModelImage>>([]);
   const [name, setName] = React.useState<string>('');
   const onSubmit = (data: IModelCreate) => {
+    const { photosession_images, sample_images, ...modelData } = data;
+    console.log(photosession_images);
+    console.log(sample_images);
     try {
-      api.get(`/clothes/${id}/`).then((res) => {
-        console.log(res);
+      api.patch(`/clothes/${id}/`, modelData).then((res) => {
+        const clothId = res.data.id;
+        for (const image of photosession_images) {
+          const formData = new FormData();
+          formData.append('image', image);
+          formData.append('cloth', clothId);
+          api.post('/clothes/create/model_image/', formData);
+        }
+        for (const image of sample_images) {
+          const formData = new FormData();
+          formData.append('image', image);
+          formData.append('cloth', clothId);
+          api.post('/clothes/create/sample_image/', formData);
+        }
+        navigate('/');
       });
     } catch (error) {
       console.log(error);

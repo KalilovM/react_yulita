@@ -17,7 +17,6 @@ export default function ModelList() {
 
   React.useEffect(() => {
     api.get('/clothes').then((response) => {
-      console.log(response.data);
       setModels(response.data);
     });
   }, []);

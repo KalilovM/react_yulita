@@ -21,19 +21,18 @@ export default function ImagesBlock(props: IProps) {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      console.log('worked');
       const filesList = Array.from(files);
       const newUrls = filesList.map((file) => URL.createObjectURL(file));
       setUrls(newUrls.concat(urls));
       setImages([...filesList, ...images]);
     }
+    console.log(files);
   };
 
   React.useEffect(() => {
     if (imageFiles) {
       setUrls(imageFiles.map((image) => image.image));
     }
-    console.log(imageFiles);
   }, [imageFiles]);
 
   return (
