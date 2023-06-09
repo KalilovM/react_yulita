@@ -10,10 +10,11 @@ type IProps = {
   heading: string;
   imageFiles?: IModelImage[];
   register: UseFormRegister<IModelCreate>;
+  readonly?: boolean;
 };
 
 export default function ImagesBlock(props: IProps) {
-  const { register, name, heading, imageFiles } = props;
+  const { register, name, heading, imageFiles, readonly } = props;
   const [images, setImages] = React.useState<Array<object>>([]);
   const [urls, setUrls] = React.useState<string[]>([]);
   const [arrayNum, setArrayNum] = React.useState<number>(8);
@@ -39,19 +40,22 @@ export default function ImagesBlock(props: IProps) {
     <div className={styles.imagesBlock}>
       <h3>{heading}</h3>
       <div className={styles.imagesList}>
-        <div className={styles.imageUploadBlock}>
-          <img src={ImageUploadIcon} alt="" />
-          <label htmlFor="imageInput">Добавить фото</label>
-          <input
-            id="imageInput"
-            type="file"
-            accept="image/*"
-            multiple
-            className={styles.imageUploadInput}
-            {...register(name)}
-            onChange={onChange}
-          />
-        </div>
+        {!readonly ? (
+          <div className={styles.imageUploadBlock}>
+            <img src={ImageUploadIcon} alt="" />
+            <label htmlFor="imageInput">Добавить фото</label>
+            <input
+              id="imageInput"
+              type="file"
+              accept="image/*"
+              multiple
+              className={styles.imageUploadInput}
+              readOnly={readonly}
+              {...register(name)}
+              onChange={onChange}
+            />
+          </div>
+        ) : null}
         {Array(arrayNum)
           .fill(null)
           .map((_, index) => (

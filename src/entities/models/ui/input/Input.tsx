@@ -11,10 +11,11 @@ interface IProps {
   placeholder: string;
   register: UseFormRegister<IModelCreate>;
   required?: boolean;
+  readonly?: boolean;
 }
 
 export default function Input(props: IProps): ReactElement {
-  const { inputType, labelHeading, placeholder, register, required, name } = props;
+  const { inputType, labelHeading, placeholder, register, required, name, readonly } = props;
   return (
     <div className={styles.container}>
       <label htmlFor={name}>{labelHeading}</label>
@@ -23,6 +24,7 @@ export default function Input(props: IProps): ReactElement {
         id={name}
         placeholder={placeholder}
         {...register(name, { required })}
+        readOnly={readonly}
       />
     </div>
   );

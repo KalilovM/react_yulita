@@ -7,7 +7,7 @@ import styles from './TopSections.module.scss';
 export default function TopSections() {
   return (
     <div className={styles.topSections}>
-      <Section href="#section" icon={ModelsIcon} title="Модели" />
+      <Section href="/" icon={ModelsIcon} title="Модели" />
       <Section href="#section" icon={WarehouseIcon} title="Склад" />
       <Section href="#section" icon="#" title="Продажа" />
       <Section href="#section" icon="#" title="Управление" />

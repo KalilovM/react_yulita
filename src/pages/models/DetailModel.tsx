@@ -1,11 +1,11 @@
+import ContetnModelDetail from '@/entities/models/ui/contentModels/ContentModelDetail';
 import Sidebar from '@/shared/ui/sidebar/Sidebar';
-import ContentModelEdit from '@/entities/models/ui/contentModelCreate/ContentModelEdit';
 
 export default function DetailModel() {
   return (
     <>
       <Sidebar />
-      <ContentModelEdit />
+      <ContetnModelDetail />
     </>
   );
 }

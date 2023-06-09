@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styles from "./LinkAnchor.module.scss";
+import { Link } from 'react-router-dom';
+import styles from './LinkAnchor.module.scss';
 
 interface IButtonProps {
   name: string;
